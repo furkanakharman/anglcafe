@@ -29,4 +29,15 @@ export class MenuitemsComponent implements OnInit {
 
   }
 
+  //gets clicked item and sends its id to the service
+  async orderItem(itemId){
+   // console.log("item id : ",itemId);
+   try {
+   await this.apiconn.addMenuItems(itemId,this.apiconn.customer.body.orderId).toPromise(); //orderId can also be found in apiconn
+   } catch (error) {
+     console.log("response: ",error);
+   } 
+   
+  }
+
 }

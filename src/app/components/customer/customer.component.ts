@@ -16,7 +16,7 @@ export class CustomerComponent implements OnInit {
 tables: Array<any>;
 customer;
 customerHtml:SafeHtml;
-
+btnMenus = true;
   constructor(private apiconn: ApiconnService,private router: Router,private sanitizer:DomSanitizer) { }
 
   
@@ -35,6 +35,7 @@ customerHtml:SafeHtml;
    this.customer = await this.apiconn.createCustomer(serializedForm).toPromise();//.subscribe(data =>{this.customer=JSON.stringify(data)});
     console.log("customer: ",this.customer.body);
     this.customerHtml = this.sanitizer.bypassSecurityTrustHtml('<p>Customer Name: '+this.customer.body.name+' - Table: '+this.customer.body.fktablenumber+' - OrderId: '+this.customer.body.orderId+'</p>');
+    this.btnMenus=false;
   }
   goMenu(){
     this.apiconn.customer=this.customer

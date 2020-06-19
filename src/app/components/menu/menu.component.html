@@ -1,7 +1,7 @@
 <p>menu works!</p>
 <ul *ngFor="let cat of menuCategories">
     <div>
-    <button [routerLink]="['/menuitems',cat.id]" >{{cat.categoryName}}</button> <!-- Go to menu/{id}-->
+    <button class="btn btn-info" [routerLink]="['/menuitems',cat.id]" >{{cat.categoryName}}</button> <!-- Go to menu/{id}-->
     <p>{{cat.categoryDescription}}</p>
     </div>
 </ul>

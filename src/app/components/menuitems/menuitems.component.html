@@ -2,7 +2,7 @@
 
 <ul *ngFor="let item of menuItems">
     <div>
-    <button>{{item.itemName}}</button> <!-- Go to menu/{id}-->
+    <button class="btn btn-warning" (click)="orderItem(item.id)" >{{item.itemName}}</button> <!-- Go to menu/{id}-->
     <p>{{item.itemDescription}}</p>
     </div>
 </ul>

@@ -1,5 +1,5 @@
 <p>customer works!</p>
-<button (click)="clickMe()">Check Tables</button>
+<button class="btn btn-danger" (click)="clickMe()">Check Tables</button>
 <div>
 <mat-card>
     <mat-card-title>
@@ -25,5 +25,5 @@
 
 <div [innerHtml]="customerHtml"></div>
 
-<button (click) ="goMenu()">The Menu</button> <!--go menu with param orderid-->
+<button class="btn btn-success" (click) ="goMenu()" [disabled]="btnMenus">The Menu</button> <!--go menu with param orderid-->
 </div>
